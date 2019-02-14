@@ -1,0 +1,9 @@
+/silverstripe-cache/
+/.env
+/vendor/
+/themes/simple/
+/resources/
+/public/resources/
+.editorconfig
+.env.example
+phpcs.xml.dist

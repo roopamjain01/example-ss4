@@ -1,0 +1,7 @@
+query ($bookID: String!) {
+  readChapters(BookID: $bookID) {
+    ID,
+    Title,
+    BookID
+  }
+}

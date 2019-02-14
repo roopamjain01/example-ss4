@@ -1,0 +1,8 @@
+query ($id: ID!) {
+  readBookDetails(ID: $id) {
+    ID,
+    Title,
+    Intro,
+    Tagline
+  }
+}

@@ -1,0 +1,7 @@
+SilverStripe\GraphQL\Manager:
+  schemas:
+    default:
+      scaffolding_providers:
+        - ObsTool\Model\Book
+        - ObsTool\Model\Chapter
+        - ObsTool\Model\Topic
