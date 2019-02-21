@@ -4,7 +4,7 @@ import {connect} from "react-redux";
 import type {RootState} from "../types/RootState";
 import {fetchBookCoverPage} from "../actions/fetchBookCoverPage";
 import {fetchBookChapterList} from "../actions/fetchBookChapterList";
-import {changeDispalyPageName} from "../actions/changeDispalyPageName";
+import {changeDisplayPageName} from "../actions/changeDisplayPageName";
 import type {BookCoverPage} from "../models/BookCoverPage";
 import type {DisplayPage} from "../models/DisplayPage";
 
@@ -23,22 +23,23 @@ const mapDispatchToProps = (dispatch: *, props: Props) => {
     dispatchFetchChapterListAction: (id: string) => {
       dispatch(fetchBookChapterList(id));
     },
-    dispatchChangeDisplayPageName: (dispalyPage: object) => {
-      dispatch(changeDispalyPageName(dispalyPage));
+    dispatchChangeDisplayPageName: (displayPage: object) => {
+      dispatch(changeDisplayPageName(displayPage));
     }
   };
 };
 
 type Props = {
   bookCoverPage?: Array<BookCoverPage>,
-  displayPage?: Object<DisplayPage>,
+  displayPage?: DisplayPage,
   dispatchFetchCoverPageAction?: (id: string) => void,
   dispatchFetchChapterListAction?: (id: string) => void,
+  dispatchChangeDisplayPageName?: (displayPage: displayPage) => void,
 };
 
 class BookCoverPageComponent extends Component<Props> {
 
-  componentDidMount() {
+  componentWillMount() {
     // fetch book cover page details
     this.props.dispatchFetchCoverPageAction('1');
   }
@@ -56,13 +57,14 @@ class BookCoverPageComponent extends Component<Props> {
         <p>{this.props.bookCoverPage.Intro}</p>
         <button
           onClick={() => {
-            this.props.dispatchFetchChapterListAction(this.props.bookCoverPage.ID);
             this.props.dispatchChangeDisplayPageName({Name: 'chapterList'});
+            this.props.dispatchFetchChapterListAction(this.props.bookCoverPage.ID);
           }}
         >
         Get Started
         </button>
       </div>
+
     );
   }
 }

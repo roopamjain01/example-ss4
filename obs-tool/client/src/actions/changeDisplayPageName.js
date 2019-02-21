@@ -5,7 +5,7 @@ import {showError} from "./error";
 import type {DisplayPage} from "../models/DisplayPage";
 
 
-export function changeDispalyPageName(data: DisplayPage): { type: string, data: DisplayPage } {
+export function changeDisplayPageName(data: DisplayPage): { type: string, data: DisplayPage } {
   return {
     type: ACTION_CHANGE_DISPLAY_PAGE,
     data,

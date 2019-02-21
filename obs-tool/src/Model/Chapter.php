@@ -82,7 +82,6 @@ class Chapter extends DataObject implements ScaffoldingProvider
         return $scaffolder;
     }
 
-
     /**
      *
      * @param Member|null $member Current user who is visiting

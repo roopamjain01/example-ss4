@@ -1,0 +1,12 @@
+query ($chapterIDs: String!) {
+  readTopics(ChapterID: $chapterIDs) {
+    ID,
+    Title,
+    Summary,
+    Description,
+    Chapter {
+      ID,
+      Title
+    }
+  }
+}

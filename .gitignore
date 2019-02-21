@@ -7,3 +7,4 @@
 .editorconfig
 .env.example
 phpcs.xml.dist
+obs-tool/client/node_modules

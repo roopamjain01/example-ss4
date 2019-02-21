@@ -4,15 +4,18 @@ import {connect} from "react-redux";
 import type {RootState} from "../types/RootState";
 import "../scss/App.scss";
 import BookCoverPage from "./BookCoverPageComponent";
-import Card from "./ChapterListComponent";
+import ChapterList from "./ChapterListComponent";
+import TopicHolder from "./TopicHolderComponent";
+import TopicDetail from "./TopicDetailComponent";
 
 class App extends Component<Props> {
-
   render() {
     return (
       <div>
         <BookCoverPage/>
-        <Card/>
+        <ChapterList/>
+        <TopicHolder/>
+        <TopicDetail/>
       </div>
     );
   }
